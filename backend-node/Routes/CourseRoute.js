@@ -17,8 +17,8 @@ router.post("/coursedata", (req, res) => {
 
 router.get("/", (req, res) => {
   CourseSchema.findAll()
-    .then((users) => {
-      res.status(200).json(users);
+    .then((courses) => {
+      res.status(200).json(courses);
     })
     .catch((err) => {
       console.error(err);
@@ -54,7 +54,7 @@ router.delete("/delete-course/:id", (req, res) => {
     where: { course_id: req.params.id },
   })
     .then(() => {
-      res.status(200).json({ message: "User deleted successfully" });
+      res.status(200).json({ message: "Course deleted successfully" });
     })
     .catch((err) => {
       console.error(err);

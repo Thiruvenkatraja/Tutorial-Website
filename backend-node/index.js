@@ -39,7 +39,7 @@ app.use(cors(corsOrigin));
 
 app.use("/course", courseSchema);
 app.use("/courseregister", CourseRegisterSchema);
-app.use("/scheduleCourse", ScheduledCourseSchema);
+app.use("/scheduledcourse", ScheduledCourseSchema);
 
 app.listen(5000, () => {
   console.log(`Server listening on port ${PORT}`);

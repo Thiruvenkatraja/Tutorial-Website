@@ -4,6 +4,14 @@ const sequelize = require("../sequelize");
 const ScheduleCourse = sequelize.define(
   "ScheduleCourse",
   {
+    schedulecourse_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      unique: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
+
     run: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -57,13 +65,5 @@ const ScheduleCourse = sequelize.define(
     freezeTableName: true,
   }
 );
-
-sequelize.sync()
-  .then(() => {
-    console.log("Schedule Course table created successfully");
-  })
-  .catch((err) => {
-    console.log("Something went wrong :", err);
-  });
 
 module.exports = ScheduleCourse;
